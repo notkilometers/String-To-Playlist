@@ -48,7 +48,7 @@ def assemblePossibleSongsDict(head): # assembles dictionary of valid songs from 
     return possible # returns dictionary of valid song substrings
 
 def assembleSongCombos(songlist, fullstr): # assembles combinations of valid song substrings until it finds an exact match of full string
-    for i in range(1, len(songlist)+1): # make all possible i length permutations
+    for i in range(1, len(songlist)+1): # make all possible i length combinations
         combs = combinations(songlist,i)
         for comb in combs:
             str = ""
