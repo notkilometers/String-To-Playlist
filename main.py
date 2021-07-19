@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
-from itertools import permutations
+from itertools import combinations
 
 client_id = ''
 client_secret = ''
@@ -50,8 +50,8 @@ def assemblePossibleSongsDict(head,sp): # assembles dictionary of valid songs fr
     return possible # returns dictionary of valid song substrings
 
 def assembleSongCombos(songlist, fullstr): # assembles combinations of valid song substrings until it finds an exact match of full string
-    for i in range(1, len(songlist)+1): # make all possible i length permutations
-        combs = permutations(songlist,i)
+    for i in range(1, len(songlist)+1): # make all possible i length combinations
+        combs = combinations(songlist,i)
         for comb in combs:
             str = ""
             for words in comb: # adds all words in combination
